@@ -1,150 +1,16 @@
-async redirects() {
+/** @type {import('next').NextConfig} */
 
-    return [
+const nextConfig = {
 
-      {
+  reactStrictMode: true,
 
-        source: '/posts/:path*',
+  swcMinify: true,
 
-        has: [
+}
 
-          {
+module.exports = nextConfig
 
-            type: 'query',
-
-            key: 'fbclid'
-
-          }
-
-        ],
-
-        destination: 'https://newsup.rf.gd/posts/:path*',
-
-        permanent: false,
-
-      },
-
-      {
-
-        source: '/posts/:path*',
-
-        has: [
-
-          {
-
-            type: 'header',
-
-            key: 'referer',
-
-          }
-
-        ],
-
-        destination: 'https://newsup.rf.gd/posts/:path*',
-
-        permanent: false,
-
-      },
-
-    ]
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
 
 
 
